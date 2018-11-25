@@ -11,7 +11,7 @@ import java.util.List;
 public class PMDClientTest {
 
     @Test
-    public void test1(){
+    public void parse(){
         //step one. specify the PMDConfiguration（Not limited to src path and ruleSets）
         PMDConfiguration pmdConfiguration = new PMDConfiguration();
         pmdConfiguration.setRuleSets("rulesets/internal/all-java.xml");

@@ -40,7 +40,10 @@ public class PMD{
 ```
 
 * net.sourceforge.pmd.processor.AbstractPMDProcessor.processFiles
->MultiThreadProcessor和MonoThreadProcessor的父类是AbstractPMDProcessor
+>MultiThreadProcessor和MonoThreadProcessor的父类是AbstractPMDProcessor。processFiles方法具体分三步：
+>1. runAnalysis方法负责分析每个源文件
+>2. renderReports负责将检测执行过程中出现的通用性错误（error）暴露出去
+>3. collectReports方法负责将每个源文件的检测结果（violation）逐一采集并暴露出去
 
 ```java
 public class AbstractPMDProcessor {
