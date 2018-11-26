@@ -29,4 +29,24 @@ public class PMDClientTest {
             }
         }
     }
+
+    @Test
+    public void parseMyRule(){
+        //step one. specify the PMDConfiguration（Not limited to src path and ruleSets）
+        PMDConfiguration pmdConfiguration = new PMDConfiguration();
+        pmdConfiguration.setRuleSets("rulesets/self/singleton.xml");
+        pmdConfiguration.setInputPaths(PMDClientTest.class.getClassLoader().getResource("src/singleton").getPath());
+
+        //step two. let pmd start parsing and generate result reports
+        List<Report> reports = PMDClient.parse(pmdConfiguration);
+
+        //step three. show the check results
+        for (Report report:reports){
+            Iterator<RuleViolation> iterator = report.iterator();
+            while (iterator.hasNext()){
+                RuleViolation violation = iterator.next();
+                System.out.println(violation.getFilename()+"->["+violation.getBeginLine()+"]->"+violation.getDescription());
+            }
+        }
+    }
 }
