@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <!--properties-->
+    <entry key="java.singleton.SingletonShouldHaveOneGetInstanceMethod.violation.msg">
+        <![CDATA[类【%s】在单例模式下只应有一个getInstance()方法!!]]>
+    </entry>
+</properties>
